@@ -53,9 +53,16 @@ public class MathCalculator {
 
     public static void calculatorMenu(int opts[], String items[]) {
        
+        /**
+         * Start the loading indicator on a separate thread
+         */
         Thread t = new SplashLoadingIndicator();
         t.start();
 
+
+        /**
+         * Wait for the thread to complete 
+         */
         try {
             t.join();
         } catch (InterruptedException e) {
@@ -63,6 +70,9 @@ public class MathCalculator {
             e.printStackTrace();
         }
        
+
+        
+
         System.out.println("*************************************");
         System.out.println("\n M A T H C A L C U L A T O R");
         System.out.println("*************************************");
