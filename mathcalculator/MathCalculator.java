@@ -3,7 +3,11 @@ package mathcalculator;
 import java.util.Scanner;
 
 
-class SplashLoadingIndicator extends Thread{
+/**
+ *
+ * @AUTHOR GUDINA NEGERA's Group @ MICROLINK INFORMATION TECHNOLOGY COLLEGE
+ */
+public class MathCalculator {
 
 
     /**
@@ -20,8 +24,11 @@ class SplashLoadingIndicator extends Thread{
         } catch (Exception ex) {}
     }
 
-    @Override
-    public void run(){
+    
+    /**
+     * SHow loading indicator
+     */
+    public static void loadingIndicator(){
         clearConsole();
         System.out.print("Loading :: ");
 
@@ -42,36 +49,18 @@ class SplashLoadingIndicator extends Thread{
 
 
     }
-}
-
-/**
- *
- * @AUTHOR GUDINA NEGERA's Group @ MICROLINK INFORMATION TECHNOLOGY COLLEGE
- */
-public class MathCalculator {
-
 
     public static void calculatorMenu(int opts[], String items[]) {
        
         /**
-         * Start the loading indicator on a separate thread
-         */
-        Thread t = new SplashLoadingIndicator();
-        t.start();
+         * Start the loading indicator 
+        */
+         loadingIndicator();
 
-
-        /**
-         * Wait for the thread to complete 
-         */
-        try {
-            t.join();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+       
        
 
-        
+
 
         System.out.println("*************************************");
         System.out.println("\n M A T H C A L C U L A T O R");
